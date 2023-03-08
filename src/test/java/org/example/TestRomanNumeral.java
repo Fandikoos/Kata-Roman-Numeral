@@ -23,4 +23,11 @@ public class TestRomanNumeral {
         AppRomanNumeral appRomanNumeral = new AppRomanNumeral();
         Assert.assertEquals("III", appRomanNumeral.convertToRomanNumeral(3));
     }
+
+    //Hacemos el año 5 antes que el 4 porque primero tenemos que conocer la Sigla romana V
+    @Test
+    public void convertYear5(){
+        AppRomanNumeral appRomanNumeral = new AppRomanNumeral();
+        Assert.assertEquals("V", appRomanNumeral.convertToRomanNumeral(5));
+    }
 }
