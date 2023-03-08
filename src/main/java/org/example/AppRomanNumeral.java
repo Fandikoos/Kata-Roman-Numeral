@@ -3,6 +3,9 @@ package org.example;
 public class AppRomanNumeral {
     public String convertToRomanNumeral(int numDecimal) {
         String romanNumber = "";
+        if (numDecimal == 10){
+            return "X";
+        }
 
         /* Si el decimal es mayor que 5, viene a este if, entonces se suma al string
         * la sigla romana V y luego le restamos al decimal 5 para que pueda seguir progresanod
