@@ -8,7 +8,7 @@ public class AppRomanNumeral {
         * la sigla romana V y luego le restamos al decimal 5 para que pueda seguir progresanod
         * en el siguiente array y que pueda sumar la sigla I en función de lo que se necesite
         * para transoformar el número*/
-        
+
         if (numDecimal >= 5){
             romanNumber += "V";
             numDecimal -= 5;
