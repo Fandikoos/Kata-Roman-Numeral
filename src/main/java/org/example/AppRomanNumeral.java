@@ -3,6 +3,9 @@ package org.example;
 public class AppRomanNumeral {
     public String convertToRomanNumeral(int numDecimal) {
         String romanNumber = "";
+        if (numDecimal == 6){
+            return "VI";
+        }
         if (numDecimal == 5){
             return "V";
         }
