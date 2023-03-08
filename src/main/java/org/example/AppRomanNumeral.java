@@ -3,11 +3,12 @@ package org.example;
 public class AppRomanNumeral {
     public String convertToRomanNumeral(int numDecimal) {
         String romanNumber = "";
-        if (numDecimal == 12){
-            return "XII";
-        }
-        if (numDecimal == 10){
-            return "X";
+
+        /* Aplicamos la misma lógica que hemos utilizado para convertir los numeros decimales
+        relacionados con la Sigla romana V*/
+        if (numDecimal >= 10){
+            romanNumber += "X";
+            numDecimal -= 10;
         }
 
         /* Si el decimal es mayor que 5, viene a este if, entonces se suma al string
