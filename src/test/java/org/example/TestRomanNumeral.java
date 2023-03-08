@@ -7,8 +7,14 @@ import org.junit.Test;
 
 public class TestRomanNumeral {
     @Test
-    public void ConvertYear1(){
+    public void convertYear1(){
         AppRomanNumeral appRomanNumeral = new AppRomanNumeral();
         Assert.assertEquals("I",appRomanNumeral.convertToRomanNumeral(1));
+    }
+
+    @Test
+    public void convertYear2(){
+        AppRomanNumeral appRomanNumeral = new AppRomanNumeral();
+        Assert.assertEquals("II", appRomanNumeral.convertToRomanNumeral(2));
     }
 }
