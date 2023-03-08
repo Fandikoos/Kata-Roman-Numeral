@@ -1,16 +1,16 @@
 package org.example;
 
 public class AppRomanNumeral {
-    public String convertToRomanNumeral(int i) {
-        if (i == 5){
+    public String convertToRomanNumeral(int numDecimal) {
+        String romanNumber = "";
+        if (numDecimal == 5){
             return "V";
         }
-        if (i == 3){
-            return "III";
+
+        //Recorremos un array que nos permitira sacar los 3 primeros años
+        for (int i = 0; i< numDecimal; i++){
+            romanNumber += "I";
         }
-        if (i == 2){
-            return "II";
-        }
-        return "I";
+        return romanNumber;
     }
 }
