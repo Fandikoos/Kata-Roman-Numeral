@@ -16,8 +16,19 @@ public class AppRomanNumeral {
 
     /* Creamos una enumeración (enum) que nos va a permitir contener unos valores
     definidos en una lista. Esa lista va a estar formada por todas las siglas romanas
-    acompañadas de su valor decimal*/
+    acompañadas de su valor decimal.
+    Como se ha comprobado hasta aquí, gracias a la enumeración podemos recoger el resto de
+    siglas romanas respectivas a sus decimales pero tambien tendremos que recoger las excepciones
+    correspondientes como se ha visto en los números 4 y 9*/
     enum RomanToDecimal{
+        THOUSAND("M", 1000),
+        NINE_HUNDRED("CM", 900),
+        FIVE_HUNDRED("D", 500),
+        FOUR_HUNDRED("CD", 400),
+        HUNDRED ("C", 100),
+        NINETY("XC", 90),
+        FIFTY("L", 50),
+        FORTY("XL", 40),
         TEN("X", 10),
         NINE("IX", 9),
         FIVE("V", 5),
