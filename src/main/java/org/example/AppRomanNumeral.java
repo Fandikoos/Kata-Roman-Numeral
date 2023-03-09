@@ -3,22 +3,13 @@ package org.example;
 public class AppRomanNumeral {
     public String convertToRomanNumeral(int numDecimal) {
         String romanNumber = "";
-
-        /* Aplicamos la misma lógica que hemos utilizado para convertir los numeros decimales
-        relacionados con la Sigla romana V*/
-        if (numDecimal >= 10){
-            romanNumber += "X";
-            numDecimal -= 10;
-        }
-
-        /* Si el decimal es mayor que 5, viene a este if, entonces se suma al string
-        * la sigla romana V y luego le restamos al decimal 5 para que pueda seguir progresanod
-        * en el siguiente array y que pueda sumar la sigla I en función de lo que se necesite
-        * para transoformar el número*/
-
-        if (numDecimal >= 5){
-            romanNumber += "V";
-            numDecimal -= 5;
+        /*A traves de un for each recorremos la enumeracion para determinar las
+        siglas romanas que se van a ir sumando en función del numero decimal*/
+        for (RomanToDecimal romanToDecimal : RomanToDecimal.values()){
+            if (numDecimal >= romanToDecimal.decimal){
+                romanNumber += romanToDecimal.roman;
+                numDecimal -= romanToDecimal.decimal;
+            }
         }
 
         //Recorremos un array que nos permitira sacar los 3 primeros años
@@ -26,5 +17,20 @@ public class AppRomanNumeral {
             romanNumber += "I";
         }
         return romanNumber;
+    }
+
+    /* Creamos una enumeración (enum) que nos va a permitir contener unos valores
+    definidos en una lista. Esa lista va a estar formada por todas las siglas romanas
+    acompañadas de su valor decimal*/
+    enum RomanToDecimal{
+        TEN("X", 10),
+        FIVE("V", 5);
+        private final String roman;
+        private final int decimal;
+
+        RomanToDecimal(String roman, int decimal){
+            this.roman = roman;
+            this.decimal = decimal;
+        }
     }
 }
