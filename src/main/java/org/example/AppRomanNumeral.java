@@ -6,7 +6,7 @@ public class AppRomanNumeral {
         /*A traves de un for each recorremos la enumeracion para determinar las
         siglas romanas que se van a ir sumando en función del numero decimal*/
         for (RomanToDecimal romanToDecimal : RomanToDecimal.values()){
-            if (numDecimal >= romanToDecimal.decimal){
+            while (numDecimal >= romanToDecimal.decimal){
                 romanNumber += romanToDecimal.roman;
                 numDecimal -= romanToDecimal.decimal;
             }
