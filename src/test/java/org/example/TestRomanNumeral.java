@@ -62,4 +62,10 @@ public class TestRomanNumeral {
         AppRomanNumeral appRomanNumeral = new AppRomanNumeral();
         Assert.assertEquals("XXX", appRomanNumeral.convertToRomanNumeral(30));
     }
+
+    @Test
+    public void convertYear4(){
+        AppRomanNumeral appRomanNumeral = new AppRomanNumeral();
+        Assert.assertEquals("IV", appRomanNumeral.convertToRomanNumeral(4));
+    }
 }
