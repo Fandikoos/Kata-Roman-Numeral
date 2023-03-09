@@ -11,11 +11,6 @@ public class AppRomanNumeral {
                 numDecimal -= romanToDecimal.decimal;
             }
         }
-
-        //Recorremos un array que nos permitira sacar los 3 primeros años
-        for (int i = 0; i< numDecimal; i++){
-            romanNumber += "I";
-        }
         return romanNumber;
     }
 
@@ -24,7 +19,8 @@ public class AppRomanNumeral {
     acompañadas de su valor decimal*/
     enum RomanToDecimal{
         TEN("X", 10),
-        FIVE("V", 5);
+        FIVE("V", 5),
+        ONE("I", 1);
         private final String roman;
         private final int decimal;
 
