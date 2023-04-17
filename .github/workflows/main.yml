@@ -1,0 +1,35 @@
+--Este archivo se ejecutara cuando se haga un push desde la rama develop
+--En el trabajo test, se instalaran las dependencias, se ejecutaran los test y el super linter
+--En el trabajo deploy especificamos que este trabajo solo se ejecutará cuando se realice un push de la rama develop
+
+name: Práctica de despliegue continuo
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm test
+      - name: Lint code
+        run: npm run lint
+  deploy:
+    name: Deploy
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: main
+      - name: Deploy to production
+        run:
+         
