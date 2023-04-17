@@ -1,6 +1,6 @@
---Este archivo se ejecutara cuando se haga un push desde la rama develop
---En el trabajo test, se instalaran las dependencias, se ejecutaran los test y el super linter
---En el trabajo deploy especificamos que este trabajo solo se ejecutará cuando se realice un push de la rama develop
+#Este archivo se ejecutara cuando se haga un push desde la rama develop
+#En el trabajo test, se instalaran las dependencias, se ejecutaran los test y el super linter
+#En el trabajo deploy especificamos que este trabajo solo se ejecutará cuando se realice un push de la rama develop
 
 name: Práctica de despliegue continuo
 on:
