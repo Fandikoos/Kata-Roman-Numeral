@@ -46,9 +46,13 @@ jobs:
             git config user.email "$(git log -n 1 --pretty=format:%ae)"
 
       - name: Deploy
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: "develop"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
             git checkout main
             git merge --no-ff develop -m "Mergeando desde develop"
-            git remote set-url --push origin https://Fandikoos:${{ secrets.GITHUB_TOKEN }}@github.com/Fandikoos/Kata-Roman-Numeral
+            git remote set-url --push origin https://Fandikoos:$GITHUB_TOKEN@github.com/Fandikoos/Kata-Roman-Numeral
             git push
         
